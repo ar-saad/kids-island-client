@@ -8,7 +8,7 @@ const MyOrders = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${user.email}`)
+        fetch(`https://aqueous-forest-60906.herokuapp.com/orders/${user.email}`)
             .then((res) => res.json())
             .then((data) => {
                 setMyOrders(data);
@@ -20,7 +20,7 @@ const MyOrders = () => {
             "Are you sure you want to cancel this booking?"
         );
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://aqueous-forest-60906.herokuapp.com/orders/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())

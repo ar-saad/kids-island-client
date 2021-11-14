@@ -5,7 +5,7 @@ import SingleProduct from "../../Shop/SingleProduct";
 const TopProducts = () => {
     const [homeProducts, setHomeProducts] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/home/products")
+        fetch("https://aqueous-forest-60906.herokuapp.com/home/products")
             .then((res) => res.json())
             .then((data) => {
                 setHomeProducts(data);

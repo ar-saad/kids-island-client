@@ -19,7 +19,7 @@ const AddReview = () => {
             review.img = "https://i.ibb.co/h2BHyJj/blank-user.jpg";
         }
 
-        fetch("http://localhost:5000/reviews", {
+        fetch("https://aqueous-forest-60906.herokuapp.com/reviews", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

@@ -17,7 +17,7 @@ const Purchase = () => {
     const [orderInfo, setOrderInfo] = useState(initialOrderInfo);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://aqueous-forest-60906.herokuapp.com/products/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setProduct(data);
@@ -45,7 +45,7 @@ const Purchase = () => {
             shippingStatus: "pending",
         };
 
-        fetch("http://localhost:5000/orders", {
+        fetch("https://aqueous-forest-60906.herokuapp.com/orders", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
