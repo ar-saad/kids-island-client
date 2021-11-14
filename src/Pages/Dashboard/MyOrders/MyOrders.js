@@ -17,7 +17,7 @@ const MyOrders = () => {
 
     const handleCancelBtn = (id) => {
         const proceed = window.confirm(
-            "Are you sure you want to cancel this booking?"
+            "Are you sure you want to cancel this order?"
         );
         if (proceed) {
             fetch(`https://aqueous-forest-60906.herokuapp.com/orders/${id}`, {
@@ -26,7 +26,7 @@ const MyOrders = () => {
                 .then((res) => res.json())
                 .then((data) => {
                     if (data.deletedCount) {
-                        alert("Canceled the booking successfully");
+                        alert("Canceled the order successfully");
                     }
                     const rest = myOrders.filter((order) => order._id !== id);
                     // console.log(rest);
