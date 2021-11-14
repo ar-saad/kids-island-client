@@ -2,8 +2,10 @@ import React from "react";
 
 const ManageAllOrders = () => {
     return (
-        <div>
-            <h2>This is manage all order page</h2>
+        <div className="container mx-auto">
+            <h2 className="text-xl font-medium">
+                This is manage all order page
+            </h2>
         </div>
     );
 };

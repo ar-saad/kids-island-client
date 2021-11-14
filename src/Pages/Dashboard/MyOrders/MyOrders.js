@@ -36,7 +36,7 @@ const MyOrders = () => {
     };
 
     return (
-        <div className="container my-5 my-orders-page">
+        <div className="container mx-auto my-5 my-orders-page">
             <h1 className="text-3xl font-medium my-3">My Orders</h1>
             <div>
                 <table className="order-table">

@@ -43,7 +43,7 @@ const AddReview = () => {
     };
 
     return (
-        <div>
+        <div className="container mx-auto">
             <h2 className="text-3xl font-medium mb-5">Give a review</h2>
             <form onSubmit={handleReviewBtn}>
                 <p className="text-lg font-bold">Name:</p>

@@ -32,7 +32,7 @@ const Dashboard = () => {
                 >
                     <button>Review</button>
                 </Link>
-                <p className="border-l-2 lg:border-t-2 border-gray-500 my-5"></p>
+                <p className="md:border-t-2 border-gray-500 my-5"></p>
             </div>
 
             {admin && (
@@ -53,13 +53,13 @@ const Dashboard = () => {
                         className="no-underline text-lg block my-2"
                         to={`${url}/addProduct`}
                     >
-                        <button>Add A Product</button>
+                        Add A Product
                     </Link>
                     <Link
                         className="no-underline text-lg block my-2"
                         to={`${url}/makeAdmin`}
                     >
-                        <button>Make Admin</button>
+                        Make Admin
                     </Link>
                 </div>
             )}
@@ -71,7 +71,7 @@ const Dashboard = () => {
             <div className="col-span-12 md:col-span-2 p-5 bg-green-400">
                 {drawer}
             </div>
-            <div className="col-span-12 md:col-span-10 p-10">
+            <div className="col-span-12 md:col-span-10 py-10">
                 <Switch>
                     <Route exact path={path}>
                         <MyOrders />

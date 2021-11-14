@@ -32,7 +32,7 @@ const MakeAdmin = () => {
         e.target.value = "";
     };
     return (
-        <div>
+        <div className="container mx-auto">
             <h2 className="text-3xl font-medium">Promote to Admin</h2>
             <form onSubmit={handleAdminSubmit}>
                 <p className="text-lg font-bold mt-8">Email:</p>

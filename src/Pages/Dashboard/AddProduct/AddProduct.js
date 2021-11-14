@@ -34,7 +34,7 @@ const AddProduct = () => {
     };
 
     return (
-        <div>
+        <div className="container mx-auto">
             <h2 className="text-3xl font-medium my-3">Add a new product</h2>
             <form onSubmit={handleAddProduct}>
                 <p className="text-lg font-bold">Product Name:</p>

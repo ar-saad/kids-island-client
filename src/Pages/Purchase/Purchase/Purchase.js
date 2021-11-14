@@ -62,7 +62,7 @@ const Purchase = () => {
     };
 
     return (
-        <div className="container px-4 sm:mx-auto my-16">
+        <div className="container mx-auto my-16">
             <h1 className="text-5xl text-gray-700 font-bold text-center">
                 Purchase product
             </h1>
@@ -132,7 +132,7 @@ const Purchase = () => {
                             name="address"
                             onBlur={handleOnBlur}
                         />
-                        <div className="text-center">
+                        <div className="text-center mt-5">
                             <input
                                 type="submit"
                                 value="Place order"
