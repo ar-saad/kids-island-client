@@ -5,7 +5,7 @@ const Shop = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("https://aqueous-forest-60906.herokuapp.com/products/")
+        fetch("https://kids-island-server-saad100912.vercel.app/products/")
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data);

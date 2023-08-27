@@ -9,7 +9,7 @@ const AddProduct = () => {
     const handleAddProduct = (e) => {
         e.preventDefault();
 
-        fetch("https://aqueous-forest-60906.herokuapp.com/products", {
+        fetch("https://kids-island-server-saad100912.vercel.app/products", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

@@ -98,7 +98,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch("https://aqueous-forest-60906.herokuapp.com/users", {
+        fetch("https://kids-island-server-saad100912.vercel.app/users", {
             method: method,
             headers: {
                 "content-type": "application/json",
@@ -124,7 +124,9 @@ const useFirebase = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`https://aqueous-forest-60906.herokuapp.com/users/${user.email}`)
+        fetch(
+            `https://kids-island-server-saad100912.vercel.app/users/${user.email}`
+        )
             .then((res) => res.json())
             .then((data) => {
                 setAdmin(data.admin);

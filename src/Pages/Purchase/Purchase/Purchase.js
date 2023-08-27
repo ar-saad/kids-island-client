@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import useAuth from "./../../../hooks/useAuth";
 import { useHistory } from "react-router-dom";
 
@@ -17,7 +17,7 @@ const Purchase = () => {
     const [orderInfo, setOrderInfo] = useState(initialOrderInfo);
 
     useEffect(() => {
-        fetch(`https://aqueous-forest-60906.herokuapp.com/products/${id}`)
+        fetch(`https://kids-island-server-saad100912.vercel.app/products/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setProduct(data);
@@ -45,7 +45,7 @@ const Purchase = () => {
             shippingStatus: "pending",
         };
 
-        fetch("https://aqueous-forest-60906.herokuapp.com/orders", {
+        fetch("https://kids-island-server-saad100912.vercel.app/orders", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

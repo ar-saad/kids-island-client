@@ -8,7 +8,9 @@ const MyOrders = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`https://aqueous-forest-60906.herokuapp.com/orders/${user.email}`)
+        fetch(
+            `https://kids-island-server-saad100912.vercel.app/orders/${user.email}`
+        )
             .then((res) => res.json())
             .then((data) => {
                 setMyOrders(data);
@@ -20,9 +22,12 @@ const MyOrders = () => {
             "Are you sure you want to cancel this order?"
         );
         if (proceed) {
-            fetch(`https://aqueous-forest-60906.herokuapp.com/orders/${id}`, {
-                method: "DELETE",
-            })
+            fetch(
+                `https://kids-island-server-saad100912.vercel.app/orders/${id}`,
+                {
+                    method: "DELETE",
+                }
+            )
                 .then((res) => res.json())
                 .then((data) => {
                     if (data.deletedCount) {
