@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "kids-island-c2d68"
-  }
+  },
+  "targets": {
+    "kids-island-c2d68": {
+      "hosting": {
+        "kidsisland": [
+          "kidsisland"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
