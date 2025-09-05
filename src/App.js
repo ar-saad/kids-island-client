@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home/Home";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
@@ -12,37 +12,37 @@ import Purchase from "./Pages/Purchase/Purchase/Purchase";
 import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 
 function App() {
-    return (
-        <AuthProvider>
-            <Router>
-                <Navigation />
-                <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route exact path="/home">
-                        <Home />
-                    </Route>
-                    <PrivateRoute path="/dashboard">
-                        <Dashboard />
-                    </PrivateRoute>
-                    <Route exact path="/login">
-                        <Login />
-                    </Route>
-                    <Route exact path="/register">
-                        <Register />
-                    </Route>
-                    <Route exact path="/shop">
-                        <Shop />
-                    </Route>
-                    <PrivateRoute exact path="/purchase/:id">
-                        <Purchase />
-                    </PrivateRoute>
-                </Switch>
-                <Footer />
-            </Router>
-        </AuthProvider>
-    );
+  return (
+    <AuthProvider>
+      <Navigation />
+      <Router>
+        <Routes>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
+          <Route exact path="/shop">
+            <Shop />
+          </Route>
+          <PrivateRoute exact path="/purchase/:id">
+            <Purchase />
+          </PrivateRoute>
+        </Routes>
+      </Router>
+      <Footer />
+    </AuthProvider>
+  );
 }
 
 export default App;
