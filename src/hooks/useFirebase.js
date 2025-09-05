@@ -122,7 +122,7 @@ const useFirebase = () => {
       setIsLoading(false);
     });
     return () => unsubscribed;
-  }, []);
+  }, [auth]);
 
   useEffect(() => {
     fetch(`${backendURL}/users/${user.email}`)
@@ -130,7 +130,7 @@ const useFirebase = () => {
       .then((data) => {
         setAdmin(data.admin);
       });
-  }, [user.email]);
+  }, [backendURL, user.email]);
 
   return {
     user,
