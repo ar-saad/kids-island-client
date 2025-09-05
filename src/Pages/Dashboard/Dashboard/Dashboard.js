@@ -15,13 +15,13 @@ const Dashboard = () => {
   const drawer = (
     <div className="flex md:flex-col justify-between ">
       <div>
-        <Link className="no-underline text-lg block my-2" to="/">
+        <Link className="no-underline text-lg block my-2" to="">
           <button>My Orders</button>
         </Link>
-        <Link className="no-underline text-lg block my-2" to="/pay">
+        <Link className="no-underline text-lg block my-2" to="pay">
           <button>Payment</button>
         </Link>
-        <Link className="no-underline text-lg block my-2" to="/addReview">
+        <Link className="no-underline text-lg block my-2" to="addReview">
           <button>Review</button>
         </Link>
         <p className="md:border-t-2 border-gray-500 my-5"></p>
@@ -31,20 +31,17 @@ const Dashboard = () => {
         <div>
           <Link
             className="no-underline text-lg block my-2"
-            to="/manageAllOrders"
+            to="manageAllOrders"
           >
             Manage All Orders
           </Link>
-          <Link
-            className="no-underline text-lg block my-2"
-            to="/manageProducts"
-          >
+          <Link className="no-underline text-lg block my-2" to="manageProducts">
             Manage Products
           </Link>
-          <Link className="no-underline text-lg block my-2" to="/addProduct">
+          <Link className="no-underline text-lg block my-2" to="addProduct">
             Add A Product
           </Link>
-          <Link className="no-underline text-lg block my-2" to="/makeAdmin">
+          <Link className="no-underline text-lg block my-2" to="makeAdmin">
             Make Admin
           </Link>
         </div>
@@ -58,10 +55,10 @@ const Dashboard = () => {
       <div className="col-span-12 md:col-span-10 py-10">
         <Routes>
           <Route index element={<MyOrders />} />
-          <Route path="/pay" element={<Pay />} />
-          <Route path="/addReview" element={<Review />} />
+          <Route path="pay" element={<Pay />} />
+          <Route path="addReview" element={<Review />} />
           <Route
-            path="/manageAllOrders"
+            path="manageAllOrders"
             element={
               <AdminRoute>
                 <ManageAllOrders />
@@ -69,7 +66,7 @@ const Dashboard = () => {
             }
           />
           <Route
-            path="/manageProducts"
+            path="manageProducts"
             element={
               <AdminRoute>
                 <ManageProducts />
@@ -77,7 +74,7 @@ const Dashboard = () => {
             }
           />
           <Route
-            path="/addProduct"
+            path="addProduct"
             element={
               <AdminRoute>
                 <AddProduct />
@@ -85,7 +82,7 @@ const Dashboard = () => {
             }
           />
           <Route
-            path="/makeAdmin"
+            path="makeAdmin"
             element={
               <AdminRoute>
                 <MakeAdmin />
