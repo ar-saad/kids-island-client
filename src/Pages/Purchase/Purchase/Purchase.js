@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useAuth from "./../../../hooks/useAuth";
-import { useHistory } from "react-router-dom";
 
 const Purchase = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const { user } = useAuth();
   const navigate = useNavigate();
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
 
   const initialOrderInfo = {
     name: user.displayName,
@@ -17,12 +17,12 @@ const Purchase = () => {
   const [orderInfo, setOrderInfo] = useState(initialOrderInfo);
 
   useEffect(() => {
-    fetch(`https://kids-island-server-saad100912.vercel.app/products/${id}`)
+    fetch(`${backendURL}/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
       });
-  }, [id]);
+  }, [backendURL, id]);
 
   const handleOnBlur = (e) => {
     const field = e.target.name;
@@ -45,7 +45,7 @@ const Purchase = () => {
       shippingStatus: "pending",
     };
 
-    fetch("https://kids-island-server-saad100912.vercel.app/orders", {
+    fetch(`${backendURL}/orders`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

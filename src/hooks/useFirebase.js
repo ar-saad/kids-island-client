@@ -18,6 +18,7 @@ const useFirebase = () => {
   const [authError, setAuthError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [admin, setAdmin] = useState(false);
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -98,7 +99,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://kids-island-server-saad100912.vercel.app/users", {
+    fetch(`${backendURL}/users`, {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -124,9 +125,7 @@ const useFirebase = () => {
   }, []);
 
   useEffect(() => {
-    fetch(
-      `https://kids-island-server-saad100912.vercel.app/users/${user.email}`
-    )
+    fetch(`${backendURL}/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setAdmin(data.admin);

@@ -57,27 +57,41 @@ const Dashboard = () => {
       <div className="col-span-12 md:col-span-2 p-5 bg-green-400">{drawer}</div>
       <div className="col-span-12 md:col-span-10 py-10">
         <Routes>
-          <Route index>
-            <MyOrders />
-          </Route>
-          <Route path="/pay">
-            <Pay />
-          </Route>
-          <Route path="/addReview">
-            <Review />
-          </Route>
-          <AdminRoute path="/manageAllOrders">
-            <ManageAllOrders />
-          </AdminRoute>
-          <AdminRoute path="/manageProducts">
-            <ManageProducts />
-          </AdminRoute>
-          <AdminRoute path="/addProduct">
-            <AddProduct />
-          </AdminRoute>
-          <AdminRoute path="/makeAdmin">
-            <MakeAdmin />
-          </AdminRoute>
+          <Route index element={<MyOrders />} />
+          <Route path="/pay" element={<Pay />} />
+          <Route path="/addReview" element={<Review />} />
+          <Route
+            path="/manageAllOrders"
+            element={
+              <AdminRoute>
+                <ManageAllOrders />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="/manageProducts"
+            element={
+              <AdminRoute>
+                <ManageProducts />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="/addProduct"
+            element={
+              <AdminRoute>
+                <AddProduct />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="/makeAdmin"
+            element={
+              <AdminRoute>
+                <MakeAdmin />
+              </AdminRoute>
+            }
+          />
         </Routes>
       </div>
     </div>

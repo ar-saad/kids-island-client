@@ -14,33 +14,33 @@ import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 function App() {
   return (
     <AuthProvider>
-      <Navigation />
       <Router>
+        <Navigation />
         <Routes>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/home">
-            <Home />
-          </Route>
-          <PrivateRoute path="/dashboard">
-            <Dashboard />
-          </PrivateRoute>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-          <Route exact path="/shop">
-            <Shop />
-          </Route>
-          <PrivateRoute exact path="/purchase/:id">
-            <Purchase />
-          </PrivateRoute>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route
+            path="/purchase/:id"
+            element={
+              <PrivateRoute>
+                <Purchase />
+              </PrivateRoute>
+            }
+          />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </AuthProvider>
   );
 }

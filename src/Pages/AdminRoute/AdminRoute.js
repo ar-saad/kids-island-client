@@ -1,8 +1,9 @@
-import { Route, Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "./../../hooks/useAuth";
 
-const AdminRoute = ({ children, ...rest }) => {
+const AdminRoute = ({ children }) => {
   const { user, admin, isLoading } = useAuth();
+  const location = useLocation();
   if (isLoading) {
     return (
       <div style={{ minHeight: "600px" }}>
@@ -12,17 +13,10 @@ const AdminRoute = ({ children, ...rest }) => {
       </div>
     );
   }
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-        user.email && admin ? (
-          children
-        ) : (
-          <Navigate to="/home" state={{ from: location }} replace />
-        )
-      }
-    />
+  return user.email && admin ? (
+    children
+  ) : (
+    <Navigate to="/home" state={{ from: location }} replace />
   );
 };
 

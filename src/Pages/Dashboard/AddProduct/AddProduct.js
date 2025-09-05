@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 const AddProduct = () => {
   const [productInfo, setProductInfo] = useState({});
   const navigate = useNavigate();
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
 
   const handleAddProduct = (e) => {
     e.preventDefault();
 
-    fetch("https://kids-island-server-saad100912.vercel.app/products", {
+    fetch(`${backendURL}/products`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
