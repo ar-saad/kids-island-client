@@ -50,7 +50,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="grid grid-cols-12 gap-5" style={{ minHeight: "500px" }}>
+    <div className="grid grid-cols-12 gap-5 min-h-screen">
       <div className="col-span-12 md:col-span-2 p-5 bg-green-400">{drawer}</div>
       <div className="col-span-12 md:col-span-10 py-10">
         <Routes>

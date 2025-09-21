@@ -43,7 +43,7 @@ const Login = () => {
                 <input
                   type="email"
                   name="email"
-                  onBlur={handleOnBlur}
+                  onChange={handleOnBlur}
                   className="border-gray-400 border-2 p-1 rounded w-full"
                   placeholder="Enter your email"
                 />
@@ -51,7 +51,7 @@ const Login = () => {
                 <input
                   type="password"
                   name="password"
-                  onBlur={handleOnBlur}
+                  onChange={handleOnBlur}
                   className="border-gray-400 border-2 p-1 rounded w-full"
                   placeholder="Enter your password"
                 />
